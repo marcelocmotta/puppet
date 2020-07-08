@@ -1,0 +1,109 @@
+---
+dtp_dnsclient::nameservers:
+  - '10.70.124.20'
+  - '10.0.220.150'
+  - '10.31.220.21'
+dtp_dnsclient::wins_servers:
+  - '10.70.200.150'
+  - '10.70.200.152'
+  - '10.0.140.1'
+  - '10.0.140.2'
+  - '10.16.9.210'
+  - '10.16.9.211'
+dtp_ldapclient::ldap_servers:
+  - 'ldaps://mmldapdf.prevnet'
+  - 'ldaps://mmldapsp.prevnet'
+  - 'ldaps://mmldaprj.prevnet'
+dtp_systemedge::systemedge_trapserver: v220p010.prevnet
+dtp_systemedge::install_server: nfs.pdf.configdtp
+dtp_networkeragent::agent_version: '9.1.1.4-1'
+dtp_networkeragent::networker_servers:
+  - 'v241p069.prevnet'
+  - 'v241p070.prevnet'
+  - 'v241p490.prevnet'
+
+
+
+
+
+dtp_logapl::config::dtp_cp: 'cpdf'
+dtp_repositorios::redhat::subscription_manager::custom_capsule: "v241p522.prevnet"
+
+dtp_logapl::config::redis_host_list:
+  - 'v221p177.prevnet'
+  - 'v221p178.prevnet'
+dtp_logapl::servidores::io::file_redis:app_env: 'dev'
+
+ssl::cert::prevnet: >
+  -----BEGIN CERTIFICATE-----
+  MIID+jCCAuKgAwIBAgICJKUwDQYJKoZIhvcNAQELBQAwgbExCzAJBgNVBAYTAi0t
+  MRIwEAYDVQQIDAlTb21lU3RhdGUxETAPBgNVBAcMCFNvbWVDaXR5MRkwFwYDVQQK
+  DBBTb21lT3JnYW5pemF0aW9uMR8wHQYDVQQLDBZTb21lT3JnYW5pemF0aW9uYWxV
+  bml0MRkwFwYDVQQDDBB2MjMxaDEwNi5wcmV2bmV0MSQwIgYJKoZIhvcNAQkBFhVy
+  b290QHYyMzFoMTA2LnByZXZuZXQwHhcNMTkxMTA0MjAyMjAwWhcNMjAxMTAzMjAy
+  MjAwWjCBsTELMAkGA1UEBhMCLS0xEjAQBgNVBAgMCVNvbWVTdGF0ZTERMA8GA1UE
+  BwwIU29tZUNpdHkxGTAXBgNVBAoMEFNvbWVPcmdhbml6YXRpb24xHzAdBgNVBAsM
+  FlNvbWVPcmdhbml6YXRpb25hbFVuaXQxGTAXBgNVBAMMEHYyMzFoMTA2LnByZXZu
+  ZXQxJDAiBgkqhkiG9w0BCQEWFXJvb3RAdjIzMWgxMDYucHJldm5ldDCCASIwDQYJ
+  KoZIhvcNAQEBBQADggEPADCCAQoCggEBAL+EalBc7GIIqV3SbQs3Mny0SkGjc1gq
+  fchBOfVUKiaZYDiZETMPiAZnwvR8XyrF4Th+dNrM5DHyQo8uJhjeHh4ff3n9YXGh
+  Z7WhNlFX+iqbgYvmRihXGmaKOCgTaIz04sr4GhjdTHvFKc2rYv2zCdrNPrnk1AEZ
+  JCf7QqL00iSfUdIg7Nt6bLkVEppzvnGnVokoet7XH4RWQHhBdQq70dq/xzJ8SjWh
+  eeF0ZUrtLa3tDuf06CU1NGjw1aryhUmUIJoFm2q+eXMMgmG/YnKWH4eLuTk1h8Ke
+  mF/8uA4d5jYMFniq6SfvaAvJuWQtgxN60fX6ApTV4K2yg/EV2C5G5ekCAwEAAaMa
+  MBgwCQYDVR0TBAIwADALBgNVHQ8EBAMCBeAwDQYJKoZIhvcNAQELBQADggEBAK3+
+  KOp2rSvv8AP+DG635bgj+3khioJaGs1ZnlHYSyJYzAHzdDxMDBo5uApmkpiAFYNs
+  XPBleRB3R52egXrJDsRkIczzopok6RS73T6n79wjmnJeDtwGSkJOevBiRpoFQHrT
+  Av4aU0kfUTHTzwh6MSHvqo1iOgYtTo8kEMzqKK7pSBpTCptu4Je3g0DnTzi0d62b
+  GI1iXkMFJrSQXmodXfm1RXmCu6e56UJsgOLIUuiRHL3KbPOWBWlLAeRtR6TiNtpi
+  7XNrStyIoK7+cZFS87Yntu9/I82oGd/T0newG7eEzbHK8Y+7/oZcWBbm6fCuZWdN
+  Nr3mxlVqi+uaAZCypa4=
+  -----END CERTIFICATE-----
+
+ssl::key::prevnet: >
+  -----BEGIN RSA PRIVATE KEY-----
+  MIIEogIBAAKCAQEAv4RqUFzsYgipXdJtCzcyfLRKQaNzWCp9yEE59VQqJplgOJkR
+  Mw+IBmfC9HxfKsXhOH502szkMfJCjy4mGN4eHh9/ef1hcaFntaE2UVf6KpuBi+ZG
+  KFcaZoo4KBNojPTiyvgaGN1Me8Upzati/bMJ2s0+ueTUARkkJ/tCovTSJJ9R0iDs
+  23psuRUSmnO+cadWiSh63tcfhFZAeEF1CrvR2r/HMnxKNaF54XRlSu0tre0O5/To
+  JTU0aPDVqvKFSZQgmgWbar55cwyCYb9icpYfh4u5OTWHwp6YX/y4Dh3mNgwWeKrp
+  J+9oC8m5ZC2DE3rR9foClNXgrbKD8RXYLkbl6QIDAQABAoIBAFokumGvCzgteYKG
+  q/qudV4LAjSY+Y6TGXcrdFtLzTcz0/1v1o+hDNZu+m1XKPgaAaM0qk3eSL5VmAyK
+  nTXxPl3RV5AUukvgu87a3ZU2ArMRVM2DipwsO2nuPvZmBDzset8sHiR77ScIq195
+  /vMI1WeeWZrn4P3PVpxXAItxDoRbg7GgJ2tqhSpYldnUKfk+8/K2t/huJZ285NRe
+  apx9gDHIBgDre3RXnIHODX8eUrWJNhbYWbZ76Cv2g6xIb/6TEeOGWV0u+iu57V+t
+  IN/tJ+JrkNDTfgS3+lJKc6SzKruXtN+ek4E7Ew2sMlosrrfHijwIN5/4NliYtdZz
+  Ct887a0CgYEA8vA41USjM1WxTjlnyYM5BaSebPy5xqbHMgUa/2wAn4t7Gilx4m6T
+  hvpSopP+mPKrUv1jaYUleoqDK+Qs5tJaQzSV1QHOVBTGVCnVBYEHBQHgRTSPBCCE
+  x09PLRX7X0BqyfREFUq1BmbS+TC8yvC90kUyoY9XBAzoMy7zsU/SWucCgYEAydBw
+  PL09pVnyjvivtNnodZxB7halgCMs0xFve5RbRU3Dq1wAgGTX4cdM69wWk04iMUwW
+  Jl/yQlKPKTwLZzgR5rPrJBW6rkNcDlH8oghSrhLy1uXVZ6wLCSfxI5IKtrStorup
+  QIAAFBNUnM+RzvIlNaNDpsPRhHo5aTB4TSRI7q8CgYB0KatzRrumqz35wnc/IvDc
+  IufiA0Itm8e5wjkzkwgFQeOeEd0zwV3nd8CVnqBpr/d92k1zwke2fY7VKOjTghfI
+  9NcEIDXxfHGNAueqFxUtLsV3MfeEqKv0xZZ9X3pwBFRLtvHrIGrI4dfVcZmEjHKn
+  nZDlMa4Q8L8C4luCGEHkVwKBgHlhZXASvdYKwGmfR0a13SuHnNvPQSFNhrM4BF5G
+  f5KyT+Jrxl1yyakhDrG5QNa+IrCVu6i/Al1DfJlnZNBjF9kzE1UzwID5QI/YXeMy
+  sE/EU8xOlcjx3/1UyaMEPm9fQiPjTMvfcKyiZ7yc12yplRmqpZDSq9xLCuaqYWC8
+  VyU/AoGAXdclfBvmNlbYsa6StZEHblCF/SNC3LIH6OEb6mem+9Uix3wBG5qh2rol
+  ibMzwu9VoSA8dQUThMXRmVf/6EsYj+kJXLJyAkeHGid7FW0mk/101uTbhqBTK+DU
+  /xnAwaGygtwnYsd6eBDeUMO9XZlfD7qwxRsSUA/F8NEntbg0xQI=
+  -----END RSA PRIVATE KEY-----
+
+dtp_zabbix_agent::zabbix_server: '192.168.10.20'
+dtp_zabbix_agent::agent_version: '4.0.9-3'
+
+dtp_ssh::extra_options:
+  Match host marcelo.prevnet:
+    PermitRootLogin: yes
+  Match address 10.70.121.100:
+    PermitRootLogin: yes
+
+
+profiles::database::redis::standalone::redis_bind: '0.0.0.0'
+profiles::database::redis::standalone::package_name: 'rh-redis5'
+profiles::database::redis::standalone::protected_mode: false
+
+profiles::database::redis::cluster::cluster_name: 'redis_cluster'
+profiles::database::redis::cluster::ip_master: '192.168.0.11'
+profiles::database::redis::cluster::ip_slave1: '192.168.0.12'
+profiles::database::redis::cluster::ip_slave2: '192.168.0.13'

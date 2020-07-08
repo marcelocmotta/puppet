@@ -1,0 +1,31 @@
+---
+ version: 5
+ defaults:
+   datadir: /tmp/vagrant-puppet/manifests-078f40fa23e0672777adc7c05d4773dd/hieradata
+   data_hash: yaml_data
+   # The default value for "datadir" is "data" under the same directory as the hiera.yaml
+   # file (this file)
+   # When specifying a datadir, make sure the directory exists.
+   # See https://puppet.com/docs/puppet/latest/environments_about.html for further details on environments.
+   # datadir: data
+   # data_hash: yaml_data
+ hierarchy:
+   - name: "Per-node data (yaml version)"
+     path: "nodes/%{::trusted.certname}.yaml"
+   - name: "Other YAML hierarchy levels"
+     paths:
+       - "common.yaml"
+       - "prioridade.yaml"
+
+#hiera puppet 3
+
+# #:backends:
+#   - yaml
+#
+# :hierarchy:
+#   - "prioridade"
+#   - "common"
+#
+# :yaml:
+# #  :datadir: "%{settings::manifestdir}/hieradata"
+#   :datadir: "/tmp/vagrant-puppet/manifests-078f40fa23e0672777adc7c05d4773dd/hieradata"
