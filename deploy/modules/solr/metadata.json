@@ -1,0 +1,53 @@
+{
+  "name": "landcareresearch-solr",
+  "author": "Landcare Research",
+  "summary": "Configures and Installs Apache Solr",
+  "license": "GPL-3.0-or-later",
+  "source": "https://bitbucket.org/landcareresearch/puppet-solr",
+  "project_page": "https://bitbucket.org/landcareresearch/puppet-solr",
+  "issues_url": "https://bitbucket.org/landcareresearch/puppet-solr/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 5.0.0 < 7.0.0"
+    },
+    {
+      "name": "puppet/archive",
+      "version_requirement": ">= 4.4.0 < 5.0.0"
+    },
+    {
+      "name": "camptocamp/systemd",
+      "version_requirement": ">= 2.0.0 < 3.0.0"
+    },
+    {
+      "name": "puppetlabs/apt",
+      "version_requirement": ">= 7.0.0 < 8.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "16.04",
+        "18.04"
+      ]
+    },
+    {
+      "operatingsystem": "Centos",
+      "operatingsystemrelease": [
+        "6.4",
+        "7"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.10.0 < 7.0.0"
+    }
+  ],
+  "pdk-version": "1.17.0",
+  "template-url": "pdk-default#1.17.0",
+  "template-ref": "tags/1.17.0-0-gd3a4319",
+  "version": "6.0.0"
+}

@@ -24,8 +24,6 @@ if versioncmp($::puppetversion,'3.6.1') >= 0 {
 #     allow_virtual => $allow_virtual_packages,
 #   }
 # }
-
-node 'debian6' , 'debian7' {
-}
-node 'rhel-65' , 'rhel-74' {
+node default {
+  include solr
 }

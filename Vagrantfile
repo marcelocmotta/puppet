@@ -5,7 +5,7 @@
 #
 # CONFIGURACAO DE VARIAVEIS
 # Domínio dos servidores
-DOMAIN="mte.prevnet"
+DOMAIN="nozesnet"
 
 # Normalmente esta memória é mais do que suficiente.
 MEMORY=1024
@@ -28,24 +28,16 @@ Vagrant.configure("2") do |config|
   config.ssh.insert_key = true
   config.vm.provision "shell",
      run: "always",
-     inline: "mkdir -p /etc/facter/facts.d/"
-#   config.vm.provision "shell",
-#      run: "always",
-#      inline: "setenforce 0"
-   # config.vm.provision "shell",
-   #    run: "always",
-   #    inline: "route add default gw 192.168.0.1"
-#   config.vm.provision "shell",
-#      run: "always",
-#     inline: "systemctl stop firewalld"
+     inline: "mkdir -p /etc/facter/facts.d/ ; setenforce 0 ; systemctl stop firewalld ; yum install lsof net-tools -y"
 
-     config.vm.define "rhel-65" do |v|
-       v.vm.box = "redhat-65-puppet5"
-       v.vm.box_url = '/home/marcelo.cmotta/boxes/rhel-65-puppet5.box'
-       v.vm.host_name = "rhel65.#{DOMAIN}"
-    #  v.vm.network "private_network", ip: "192.168.0.03" #, gw: "192.168.0.1" , subnet: "255.255.255.0" #auto_config: "false"
+
+     config.vm.define "p-solr-1" do |v|
+       v.vm.box = "p-solr-1"
+       v.vm.box_url = '/home/marcelo.cmotta/boxes/package.box'
+       v.vm.host_name = "p-solr-1.#{DOMAIN}"
+      v.vm.network "private_network", ip: "192.168.2.10" #, gw: "192.168.0.1" , subnet: "255.255.255.0" #auto_config: "false"
        v.vm.provider "virtualbox" do |virtualbox|
-         virtualbox.name = "rhel-65"
+         virtualbox.name = "p-solr-1"
          virtualbox.memory = MEMORY
          virtualbox.cpus = 1
 
@@ -63,7 +55,7 @@ Vagrant.configure("2") do |config|
        v.vm.box = "redhat-74-puppet5"
        v.vm.box_url = '/home/marcelo.cmotta/boxes/rhel-74-puppet5.box'
        v.vm.host_name = "rhel-74.#{DOMAIN}"
-       v.vm.network "private_network", ip: "192.168.0.10" #, gw: "192.168.0.1" , subnet: "255.255.255.0" #auto_config: "false"
+       v.vm.network "private_network", ip: "192.168.1.20" #, gw: "192.168.0.1" , subnet: "255.255.255.0" #auto_config: "false"
        v.vm.provider "virtualbox" do |virtualbox|
          virtualbox.name = "rhel-74"
          virtualbox.memory = MEMORY
@@ -74,7 +66,7 @@ Vagrant.configure("2") do |config|
        v.vm.provision :puppet, :options => ["--pluginsync"], :module_path => "deploy/modules" do |puppet|
          puppet.manifests_path = "deploy"
          puppet.manifest_file = "site.pp"
-         puppet.options = "--verbose"
+         puppet.options = "--debug"
          puppet.hiera_config_path = "hiera.yaml"
        end
      end
