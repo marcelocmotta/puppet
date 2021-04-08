@@ -1,9 +1,0 @@
-
-# puppet forge modules
-mod 'puppetlabs/stdlib'    , '6.2.0'
-mod 'puppetlabs/vcsrepo'   , '3.1.0'
-mod 'camptocamp/systemd'   , '2.7.0'
-mod 'puppetlabs/inifile'   , '4.0.0'
-mod 'puppetlabs/apt'       , '7.3.0'
-mod 'puppetlabs/translate' , '2.1.0'
-mod 'puppet/archive'       , '4.4.0'
